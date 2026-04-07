@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lynox-deployment
+  labels:
+    app: lynox
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: lynox
+  template:
+    metadata:
+      labels:
+        app: lynox
+    spec:
+      containers:
+        - name: lynox-app
+          image: vietaws/arm:v3
+          ports:
+            - containerPort: 8080

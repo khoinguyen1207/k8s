@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: simple-app
+spec:
+  containers:
+    - name: simple-app-container
+      image: vietaws/arm:v2
+      ports:
+        - containerPort: 8080
