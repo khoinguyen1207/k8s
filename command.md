@@ -1,7 +1,3 @@
-OK, mình sẽ tổng hợp **các lệnh Kubernetes (kubectl)** theo kiểu **cheat sheet + thực chiến**, đủ để bạn dùng hằng ngày (Dev + DevOps).
-
----
-
 # 🧠 1. Nhóm lệnh cơ bản
 
 ### 📌 Kiểm tra cluster
@@ -281,15 +277,3 @@ kubectl rollout status deployment my-app
 - `exec` → vào container
 - `scale` → tăng pod
 - `rollout` → deploy process
-
----
-
-# 🚀 Nếu bạn muốn level up
-
-Mình có thể làm tiếp cho bạn:
-
-- Cheat sheet 1 trang PDF (in ra dùng)
-- Giải thích từng resource: Pod → Deployment → Service → Ingress
-- Hoặc **real project flow (CI/CD + K8s)** theo stack bạn đang dùng (NextJS + Golang)
-
-Bạn muốn đi theo hướng nào?
