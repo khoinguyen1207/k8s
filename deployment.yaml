@@ -4,18 +4,25 @@ metadata:
   name: lynox-deployment
   labels:
     app: lynox
+  annotations:
+    kubernetes.io/change-cause: "Update image v1 -> v2"
 spec:
-  replicas: 2
-  selector:
+  replicas: 3 # Số lượng bản sao của Pod
+  selector: # Chọn các Pod có nhãn app: lynox để quản lý
     matchLabels:
       app: lynox
+  strategy:
+    type: RollingUpdate # Chiến lược cập nhật: RollingUpdate / Recreate
+    # rollingUpdate:
+    #   maxUnavailable: 25% # Số lượng Pod tối đa có thể không sẵn sàng trong quá trình cập nhật
+    #   maxSurge: 25% # Số lượng Pod tối đa có thể được tạo thêm trong quá trình cập nhật
   template:
     metadata:
       labels:
-        app: lynox
+        app: lynox # Gắn nhãn cho Pod
     spec:
       containers:
         - name: lynox-app
-          image: vietaws/arm:v1
+          image: vietaws/arm:v2
           ports:
             - containerPort: 8080
